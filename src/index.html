@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Dashboard Example</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body class="text-white bg-page p-0">
+    
+    <header class="bg-white w-screen py-4 px-6 mb-4 drop-shadow sticky top-0 z-10">
+      <h1 class="text-2xl text-black">Dashboard Example</h1>
+    </header>
+
+    <div class="grid-stack m-4 overflow-x-auto">
+      <div class="grid-stack-item text-black drop-shadow" gs-w="4">
+        <div class="grid-stack-item-content bg-zinc-50 py-2 px-4 border-zinc-500">
+          <p class="flex-grow">Orders</p>
+          <div class="grid grid-cols-3 grid-rows-2 gap-x-4 gap-y-1">
+            <span class="text-xs font-light text-zinc-900 self-end">Number</span>
+            <span class="text-xs font-light text-zinc-900 self-end">Avg Size</span>
+            <span class="text-xs font-light text-zinc-900 self-end">% On time</span>
+            <span class="text-3xl text-primary-600 font-semibold">272</span>
+            <span class="text-3xl text-primary-600 font-semibold">$641</span>
+            <span class="text-3xl text-primary-600 font-semibold">94%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid-stack-item text-black drop-shadow" gs-w="4">
+        <div class="grid-stack-item-content bg-zinc-50 py-2 px-4 border-zinc-400">
+          <p class="text-zinc-900">Sales</p>
+          <div class="grid grid-cols-3 grid-rows-2 gap-x-4">
+            <span class="text-xs font-light text-zinc-900 self-end">cases</span>
+            <span class="text-xs font-light text-zinc-900 self-end">dollars</span>
+            <span class="text-xs font-light text-zinc-900 self-end">vs plan</span>
+            <span class="text-3xl text-primary-600 font-semibold">272</span>
+            <span class="text-3xl font-semibold text-primary-600">$548K</span>
+            <span class="text-3xl font-semibold text-primary-600">107%</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item text-black drop-shadow" gs-w="4">
+        <div class="grid-stack-item-content bg-zinc-50 py-2 px-4 border-zinc-400">
+          <div class="h-full w-full">
+            <p class="text-zinc-900">Current Inventory</p>
+            <div class="grid grid-cols-3 grid-rows-2 gap-x-4">
+              <span class="text-xs font-light text-zinc-900 self-end">CLIV</span>
+              <span class="text-xs font-light text-zinc-900 self-end">CLK2</span>
+              <span class="text-xs font-light text-zinc-900 self-end">KWL2</span>
+              <span class="text-3xl text-primary-600 font-semibold">272</span>
+              <span class="text-3xl font-semibold text-primary-600">491</span>
+              <span class="text-3xl font-semibold text-primary-600">5433</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item drop-shadow" gs-w="9" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 p-2 rounded">
+          <div class="flex flex-col h-full w-full">
+            <div class="text-gray-700">Sales by Month</div>
+            <div class="chart-container self-center justify-self-center flex items-center" style="position: relative; height:85%; width:95%">
+              <canvas id="lineChartTest"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item text-black" gs-w="3" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 drop-shadow py-2 rounded flex flex-col">
+          <div class="px-2 pb-4">Sales by Region</div>
+          <div class="chart-container self-center justify-self-center flex items-center" style="position: relative; height:95%; width:85%">
+            <canvas id="barChartTest"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item text-black" gs-w="3" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 drop-shadow p-2 flex flex-col rounded">
+          <div class="flex flex-col h-full w-full">
+            <div class="pb-4 text-primary-900">MTD vs Plan</div>
+            <div class="chart-container self-center justify-self-center flex items-center" style="position: relative; height:85%; width:95%">
+              <canvas id="ringChartTest"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item text-black" gs-w="3" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 drop-shadow rounded pt-2">
+          <div class="text-primary-900 px-4">Low Stock Items</div>
+          <div class="border border-primary-100 flex my-2 p-2 mx-4 bg-primary-100 text-primary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg">Product Name</div>
+              <span class="text-xs">Avg monthly sales 15 cases</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                12 <span class="text-xs">cases</span>
+              </div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-primary-100 text-primary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg">Product Name</div>
+              <span class="text-xs">Avg monthly sales 15 cases</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                12 <span class="text-xs">cases</span>
+              </div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-primary-100 text-primary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg">Product Name</div>
+              <span class="text-xs">Avg monthly sales 15 cases</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                12 <span class="text-xs">cases</span>
+              </div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-primary-100 text-primary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg">Product Name</div>
+              <span class="text-xs">Avg monthly sales 15 cases</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                12 <span class="text-xs">cases</span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item" gs-w="3" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 drop-shadow rounded text-gray-700 pt-2">
+          <div class="text-primary-800 px-4">Top Customers</div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-secondary-100 text-secondary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg text-gray-700">Name</div>
+              <span class="text-xs text-gray-600">Channel</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                $4982 <span class="text-xs">ytd</span>
+              </div>
+              <div class="text-xs text-gray-600">8 orders</div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-secondary-100 text-secondary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg text-gray-700">Name</div>
+              <span class="text-xs text-gray-600">Channel</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                $4982 <span class="text-xs">ytd</span>
+              </div>
+              <div class="text-xs text-gray-600">8 orders</div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-secondary-100 text-secondary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg text-gray-700">Name</div>
+              <span class="text-xs text-gray-600">Channel</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                $4982 <span class="text-xs">ytd</span>
+              </div>
+              <div class="text-xs text-gray-600">8 orders</div>
+            </span>
+          </div>
+          <div class="border border-zinc-200 flex my-2 p-2 mx-4 bg-secondary-100 text-secondary-900 rounded">
+            <span class="flex-grow flex flex-col">
+              <div class="text-lg text-gray-700">Name</div>
+              <span class="text-xs text-gray-600">Channel</span>
+            </span>
+            <span>
+              <div class="text-xl">
+                $4982 <span class="text-xs">ytd</span>
+              </div>
+              <div class="text-xs text-gray-600">8 orders</div>
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      <div class="grid-stack-item text-black" gs-w="3" gs-h="2">
+        <div class="grid-stack-item-content bg-zinc-50 drop-shadow p-2 flex flex-col rounded">
+          <div class="pb-4">Sales by Channel</div>
+          <div class="chart-container self-center justify-self-center flex items-center" style="position: relative; height:85%; width:95%">
+            <canvas id="doughnutChartTest"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

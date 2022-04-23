@@ -1,0 +1,27 @@
+{
+  "name": "dashboard-sample-app",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "version": "0.1.0",
+  "description": "Test App for analytics dashboard using chart.js, tailwind.css and gridstack.js",
+  "scripts": {
+    "start": "npm-run-all --parallel 'watch:*'",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build",
+    "watch:start": "parcel serve src/index.html",
+    "watch:css": "tailwindcss -i src/styles.css -o src/assets/tailwind/tailwind.css -w"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.14",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.1",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^3.0.7"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.0",
+    "gridstack": "^4.4.0"
+  }
+}

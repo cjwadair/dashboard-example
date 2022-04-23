@@ -1,0 +1,11 @@
+// .gitignore
+node_modules
+
+//yarn.lock
+yarn.lock
+
+//parcel-cache
+.parcel-cache
+
+//dist
+dist
