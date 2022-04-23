@@ -12,10 +12,13 @@ or
 
 then start the dev server:
 `npm start`
+or 
+`yarn start`
 
 # Building for production:
-
-`parcel build src/index.html`
+`npm build`
+or
+`yarn build`
 
 ## License
 
